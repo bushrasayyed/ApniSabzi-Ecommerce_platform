@@ -1,0 +1,477 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+.icon {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 20px;
+}
+.icon_header {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 26px;
+}
+.icon, .icon_header {
+  margin-right: 5px;
+}
+
+.close_icon {
+  color: red;
+  margin-left: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 260px 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-areas:
+    'sidebar header header header'
+    'sidebar main main main';
+  height: 100vh;
+}
+
+/* Header  */
+.header {
+  grid-area: header;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+  box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+}
+
+.menu-icon {
+  display: none;
+}
+/* End Header  */
+
+/* Sidebar  */
+#sidebar {
+  grid-area: sidebar;
+  height: 100%;
+  background-color: #7dca00;
+  overflow-y: auto;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px 0px 30px;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.sidebar-title > span {
+  display: none;
+}
+
+.sidebar-brand {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  
+}
+
+.sidebar-list {
+  padding: 0;
+  list-style-type: none;
+  
+}
+
+.sidebar-list-item {
+  padding: 20px 20px 20px 20px;
+  font-size: 18px;
+  
+  
+}
+
+.sidebar-list-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.sidebar-list-item > a {
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar-responsive {
+  display: inline !important;
+  position: absolute;
+  /*
+    we want the z-index of the sidebar higher so that
+    the charts are not showing over the sidebar 
+    on small screens
+  */
+  z-index: 12 !important;
+}
+
+/* End Sidebar  */
+
+
+/* Main  */  
+.main-container {
+  grid-area: main;
+  overflow-y: auto;
+  padding: 20px 20px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.main-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  margin: 15px 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.card:first-child {
+  background-color: #e6e8ee;
+}
+
+.card:nth-child(2) {
+  background-color: #f5eee9;
+}
+
+.card:nth-child(3) {
+  background-color: #f8fcf9;
+}
+
+.card:nth-child(4) {
+  background-color: #d50000;
+}
+
+.card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-inner > .card_icon {
+  font-size: 25px;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 60px;
+  height: 300px;
+}
+
+/* End Main  */
+
+
+/* Medium <= 992px */
+  
+@media screen and (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      'header'
+      'main';
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline;
+  }
+
+  .sidebar-title > span {
+    display: inline;
+  }
+}
+/* Small <= 768px */
+  
+@media screen and (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+}
+
+/* Extra Small <= 576px */
+
+@media screen and (max-width: 576px) {
+  .hedaer-left {
+    display: none;
+  }
+}
+
+
+/* Layout.css */
+.layout-container {
+  position: relative;
+}
+
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff; /* Adjust as needed */
+  z-index: 1000; /* Ensure header is above other content */
+}
+
+.content {
+  margin-top: 70px; /* Adjust based on header height */
+}
+
+.Footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff; /* Adjust as needed */
+  z-index: 1000; /* Ensure footer is above other content */
+}
+
+
+
+/* ADMIN CSS */
+
+.AppContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Set the minimum height of the container to 100% of the viewport height */
+  }
+  
+  .AppHeader {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 20px 4px 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  }
+  .MainContent {
+    margin-top: 20px; /* Add space between header and content */
+  }
+  .ContentContainer {
+    display: flex;
+    flex-wrap: wrap; /* Allow components to wrap to the next line if they don't fit */
+  }
+  
+  .ContentContainer .component {
+    flex-grow: 1; /* Allow components to grow to fill the available space */
+    flex-basis: calc(40% - 30px); /* Set initial width for each component (adjust as needed) */
+    margin: 10px; /* Add margin between components */
+    box-sizing: border-box; /* Include padding and border in the width */
+  }
+  
+  .AppFooter {
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+  }
+  
+
+  .CardsContainer {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 8px; /* Border radius */
+    margin-bottom: 20px; /* Margin bottom for spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
+  }
+  
+  .CardsContainer .ant-card {
+    margin-bottom: 24px; /* Increase margin bottom for more spacing between cards */
+    border-radius: 12px; /* Increase border radius for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Increase box shadow for depth */
+    margin: 0 10px;
+    width: 300px; 
+    height: 200px; 
+  }
+  
+  .CardsContainer .ant-card-head {
+    padding: 12px 24px; /* Increase padding for card header */
+  }
+  
+  .CardsContainer .ant-card-body {
+    padding: 24px; /* Increase padding for card body */
+  }
+  
+  .CardsContainer .ant-card h1 {
+    font-size: 32px; /* Increase font size for card content */
+    font-weight: bold; /* Font weight for card content */
+    color: #333; /* Text color for card content */
+  }
+
+
+
+
+
+
+  /* VENDOR PRODUCT FORM CSS */
+  .form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 70px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: #7dca00;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #7dca00;
+  }
+  
+  /* Alert Styling */
+  .alert {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+
+
+
+  /* Product css */
+  .product-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust gap between cards */
+  }
+  
+  .product-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px; /* Adjust card width as needed */
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .product-details h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .product-details p {
+    margin-bottom: 10px;
+  }
+  
+  .product-actions button {
+    margin-right: 10px; /* Adjust button spacing */
+  }
+  
+  .view-button {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  
+  .edit-button {
+    background-color: #28a745;
+    color: #ffffff;
+  }
+  
+  .delete-button {
+    background-color: #dc3545;
+    color: #ffffff;
+  }
+  
+  
+  
+  
