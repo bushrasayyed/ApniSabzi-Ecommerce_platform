@@ -108,9 +108,11 @@ npm start
 
 This project is based on our published academic research work:
 
-**Title:** ApniSabzi: A Digital Solution to Fresh Produce
+**Title:** **ApniSabzi**: A Digital Solution to Fresh Produce
 Street Vending Problems in Pune District
+
 **Published In:** International Journal for Multidisciplinary Research (IJFMR)
+
 **Link:** [View the Paper](https://www.ijfmr.com/papers/2025/2/40089.pdf)
 
 Please cite this work when referencing or building upon this project.
