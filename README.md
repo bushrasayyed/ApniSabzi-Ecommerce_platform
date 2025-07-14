@@ -98,3 +98,29 @@ npm start
  The frontend will typically run on `http://localhost:3000` and the backend on `http://localhost:5000` (or your configured ports).
 
 ---
+## 👩‍💻 Authors
+- Bushra Sayyed
+- Azreen Maulavi
+
+---
+
+## 📑 Published Research Paper
+
+This project is based on our published academic research work:
+
+**Title:** ApniSabzi: A Digital Solution to Fresh Produce
+Street Vending Problems in Pune District
+**Published In:** International Journal for Multidisciplinary Research (IJFMR)
+**Link:** [View the Paper](https://www.ijfmr.com/papers/2025/2/40089.pdf)
+
+Please cite this work when referencing or building upon this project.
+
+---
+
+## 📄 License
+
+This project is licensed under the **Apache License 2.0**.  
+You may obtain a copy of the License at:
+
+[LICENSE](./LICENSE)
+
